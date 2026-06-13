@@ -24,3 +24,10 @@ We use back slace `\` to make any regex special characters as a literal characte
 
 //created a space character to literal character with the help of backslace special character.
 ```
+
+# Flags
+
+1. `Global Flag(g)`=> this flag help to select all the pattern globally like select all the character which match with pattern.
+2. `case-insensitive(i)`=> this flag used for case insensitive if the character is written in uppercase or lower not a matter it just select it.
+3. `single-line(s)`=>this flag works with . (dot special character) to select all the new line which were not selected as default.
+4. `unicode(u)`=> this regex flag used for selecting the pattern which were of different language character by the help of unicode ex:-`\u0454` after u 0 is mandatory.
