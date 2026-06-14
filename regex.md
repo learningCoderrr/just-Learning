@@ -67,3 +67,14 @@ example:-
 // select Mr Prakas
 // not selects mr mohan
 ```
+
+# ShortHand or predefined character (class or sets)
+
+Short Hand for writing character class
+
+1. `\d` => [0-9].
+2. `\w` => [a-zA-Z0-9_].
+3. `\s` =>[\n ] can select those which has space,tab space,new line(line break).
+4. `\D` => [^0-9]
+5. `\W` => [^A-Za-z0-9_]
+6. `\S` => [^\n ] would't select space,tab space or new line (line break) other pattern will be selected
