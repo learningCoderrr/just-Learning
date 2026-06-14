@@ -41,6 +41,17 @@ ex:-`[abcd]` => only this set of character is selected not a single character wi
 1. `Range`=> with the help of range we can provide a range of character according to the unique code of character. ex:- `[a-zZ-a]`
 2. `Inverter or not` => if caret is written initially then it denoted as a special character or meta character .This special character make the set not means if anything is written in the character class then that will be not selected accept that all set's other character will be selected. ex:- `[^a-z_A-Z]`. If we write the `^`caret symbol after some character then it lose it's special ability ex:- `[hd^3-9]` this now select all the given set present in the set.
 
+# Quantify
+
+Quantify is used for tell the regex that how many u have to select the character means the quantity
+
+1. `?` => if character is present or not (1 or 0) then select that text.
+2. `+` => at least one single similar character to select text (1 or more text's according to set or text).
+3. `*` => character present or not no matter it will select that text (0 or more then 0 text will be selected).
+4. `{n}` => we can set specific n number of character should be written the pattern.
+5. `{n,}` => add at least n number or more then n number character in pattern.
+6. `{n,m}` => add at lest n number and less then equal to last m numbers in pattern.
+
 # Anchor
 
 This anchor works when we want to check the word is that word is present in initially or in last of the word or in new line (only works when multi-line flag is on).
