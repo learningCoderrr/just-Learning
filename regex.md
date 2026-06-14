@@ -31,6 +31,7 @@ We use back slace `\` to make any regex special characters as a literal characte
 2. `case-insensitive(i)`=> this flag used for case insensitive if the character is written in uppercase or lower not a matter it just select it.
 3. `single-line(s)`=>this flag works with . (dot special character) to select all the new line which were not selected as default.
 4. `unicode(u)`=> this regex flag used for selecting the pattern which were of different language character by the help of unicode ex:-`\u0454` after u 0 is mandatory.
+5. `multi-line(m)`=> this m flag used in anchors . If wanted to check the value after ending or starting of every new line then we use this flag. If we only wanted to view the ending and last character then we would't user this flag
 
 # Character set (character class)
 
@@ -39,3 +40,19 @@ ex:-`[abcd]` => only this set of character is selected not a single character wi
 
 1. `Range`=> with the help of range we can provide a range of character according to the unique code of character. ex:- `[a-zZ-a]`
 2. `Inverter or not` => if caret is written initially then it denoted as a special character or meta character .This special character make the set not means if anything is written in the character class then that will be not selected accept that all set's other character will be selected. ex:- `[^a-z_A-Z]`. If we write the `^`caret symbol after some character then it lose it's special ability ex:- `[hd^3-9]` this now select all the given set present in the set.
+
+# Anchor
+
+This anchor works when we want to check the word is that word is present in initially or in last of the word or in new line (only works when multi-line flag is on).
+
+1. `^` => this flag check the initial value in the hole sentence or in new line.
+2. `$` => this flag check the last value in hole sentence or in a new line.
+
+example:-
+
+```js
+/^Mrs? [A-Z][a-z]{2,}/gim;
+// selects Mr Prabhu
+// select Mr Prakas
+// not selects mr mohan
+```
