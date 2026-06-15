@@ -78,3 +78,25 @@ Short Hand for writing character class
 4. `\D` => [^0-9]
 5. `\W` => [^A-Za-z0-9_]
 6. `\S` => [^\n ] would't select space,tab space or new line (line break) other pattern will be selected
+
+# Alternative or (OR operator)
+
+This alternative named special character used for spurting the pattern differently if one pattern got correct then other pattern will not works
+`symbol` => `|`
+example
+
+```js
+/hello sir [A-Z][a-zA-Z]{2,}| what happen [A-Z][a-zA-Z]{2,} kumar/g;
+```
+
+# Group
+
+A group in regex is a way to bundle multiple pattern pieces together so they can be treated as one unit.
+`symbol` => `()`
+
+```js
+/(Mr|Mrs)? [A-Z][a-zA-Z]{2,}/g;
+// Mr Prabhu
+// Mrs Prakash
+// Pramod
+```
