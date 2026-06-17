@@ -89,14 +89,51 @@ example
 /hello sir [A-Z][a-zA-Z]{2,}| what happen [A-Z][a-zA-Z]{2,} kumar/g;
 ```
 
-# Group
+# Groups
 
 A group in regex is a way to bundle multiple pattern pieces together so they can be treated as one unit.
-`symbol` => `()`
+
+There is two typeof Group in regex
+
+<details>
+<summary>Capturing Group</summary>
+
+- This group track the patten and also capture it for the feature use .
+- We can backtrack it means reUse that captured patten again in regex using `\1,\2,\3 ... \\n` up to `n numbers` every number represent the different capturing group `()`.
+- We can also provide a capturing name like this --> `(?<sirName>Mr|Mrs)? [A-Z][a-z]{2,}\.Hello \k<sirName>` or we can also use number for the capturing `\1` in the place of `\k<sirName>`.
+- We needed then use this group if not then use non-capturing group . Because when it captures the pattern then it will store in memory so if there is no need then would not capture it.
+</details>
+
+<details>
+<summary>Non-Capturing Group</summary>
+
+This group would `not capture any thing just match the pattern` . We would `not able to backtrack` it.  
+use => `(?:Hello)? [A-Z][a-z]{2,}`
+
+</details>
 
 ```js
-/(Mr|Mrs)? [A-Z][a-zA-Z]{2,}/g;
+/(?:Mr|Mrs)? [A-Z][a-zA-Z]{2,}/g;
 // Mr Prabhu
 // Mrs Prakash
 // Pramod
+/(?:3[01]|0[1-9]|[12]\d)(?<split>\\|\-)(?:1[0-2]|0[1-9])\k<split>20\d{2}/g;
+// 03-12-2000
+// 12\01\2034
 ```
+
+# Word Boundary and Non-Word Boundary
+
+<details>
+<summary>Word Boundary</summary>
+
+This is denoted with `\b` this works which pattern match with this regex pattern [^a-zA-Z0-9_] `\W`
+
+</details>
+
+<details>
+<summary>Non-Word Boundary</summary>
+
+This is denoted with `\B` this works which pattern match with this regex pattern [a-zA-Z0-9_] or `\W`
+
+</details>
