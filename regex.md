@@ -137,3 +137,25 @@ This is denoted with `\b` this works which pattern match with this regex pattern
 This is denoted with `\B` this works which pattern match with this regex pattern [a-zA-Z0-9_] or `\W`
 
 </details>
+
+# Lookahead && Lookbehind
+
+This lookahead and lookbehind only view the pattern it would not select the matches . It works like a normal pattern but it will never select those pattern.
+
+- `Lookahead`
+  - `Positive`:- check the string one by one according the pattern. Syntax`(?=)`
+  - `Negative`:- check the string one by one according the pattern which is not present on the string. Syntax `(?!)`
+- `Lookbehind`
+  - `Positive`:- check the letter before the matched pattern . Syntax `(?<=)`
+  - `Negative`:- this is opposite of `positive lookbehind` . Syntax `(?<!)`
+
+# Replacement or Substitution
+
+We replace the matched string with some specific ways.
+
+1. `$&`=> this means the matched character.
+2. `$\``=> this means all the character which is before the match.
+3. `$'`=> this means all the character which is after the match.
+4. `$1`=> this means the n captured match .
+5. `$<name>`=> this means the named captured match .
+6. `$$`=> this means if u want dollar symbol then use this .
