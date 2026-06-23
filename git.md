@@ -25,7 +25,7 @@
   - `git remote`
   - `git remote -v`
   - `git remote add remoteName remoteURL`
-  - `git remote remove remoteName remoteURL`
+  - `git remote remove remoteName`
   - `git push remoteName branchName`
   - `git push -u remoteName branchName`
   - `git pull remoteName branchName`
@@ -38,7 +38,5 @@
   - `git reflog branchName`
   - `git reflog `
   - `git reflog HEAD@{0}`
-
-# not a git cmd
-
-.gitignore file to ignore all the other files
+- `Ignore files in git`
+  - `.gitignore`
