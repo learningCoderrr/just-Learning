@@ -175,4 +175,14 @@ There is some method and property present in constructor function of regex
 
 1. `test()`=> This method argument as a str and check the string that is it have that pattern written in regex.
 2. `exec()`=> This method help to execute the regex and check the string which was on 1 argument and provide some more property like matched value ,full string, group and many more ... .If the match is not found then return null. if there is global flag then it will check hole string when u call it again and again.
-3. `lastindex`=> This is a property which hold number. It updated when every we using regex pattern with global flag. Whenever we call exec function this used for next starting index where to find the string.
+3. `lastIndex`=> This is a property which hold number. It updated when every we using regex pattern with global flag. Whenever we call exec function this used for next starting index where to find the string.
+
+## Supporting regex in methods of string.
+
+1. `match()`=> This method works like exec but it would not update the regex property know as lastIndex so if we use global flag then it will only select the matched string other wise if it is not using any flag then it will works like exec method.
+
+2. `matchAll()`=> This only works with global flag but provide a iterator which we can spread it out on array and take all the matched element with details like exec provide a single but it provide multiple.
+3. `replace()`=> This method works with global and non-global flag . It help to replace character on the string . we can also pass second argument as a callback function which provides matched element ,captured value with sequence,offset,string,capturing group.
+4. `replaceAll()`=> this works same as replace but if we using regex then we have to provide global flag.
+5. `search()`=> It works like indexOf method means provide the index of the string if it find the match but in indexOf we can pass only the string but not regex , but in this method we can pass string as well as regex to find the offset `(position of the string which is matched)`
+6. `split()`=> we can also pass regex on the split method to split string into array.
