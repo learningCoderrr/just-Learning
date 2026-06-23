@@ -1,4 +1,6 @@
-# Delimiter
+# Regex
+
+## Delimiter
 
 Delimiter are those which give's a limit to anything
 
@@ -6,16 +8,16 @@ Delimiter are those which give's a limit to anything
 /*This is first and last forward and star are the delimiter which limits the comment*/
 ```
 
-# Literal Characters
+## Literal Characters
 
 Those characters which present in a string and have no special character in regex or not a meta characters those characters meanly knows Liters characters .
 
-# Meta characters (special characters)
+## Meta characters (special characters)
 
 Those characters which have some meaning for regex those area known as meta characters  
 ex:- `.`,`{}`,`\n`,`$`,`^`,`[]`,`?`,`|`,`*`,`+`,`()`,`\r`,`\`,etc...
 
-# Making Meta characters as a literal character
+## Making Meta characters as a literal character
 
 We use back slace `\` to make any regex special characters as a literal characters
 
@@ -25,7 +27,7 @@ We use back slace `\` to make any regex special characters as a literal characte
 //created a space character to literal character with the help of backslace special character.
 ```
 
-# Flags
+## Flags
 
 1. `Global Flag(g)`=> this flag help to select all the pattern globally like select all the character which match with pattern.
 2. `case-insensitive(i)`=> this flag used for case insensitive if the character is written in uppercase or lower not a matter it just select it.
@@ -33,7 +35,7 @@ We use back slace `\` to make any regex special characters as a literal characte
 4. `unicode(u)`=> this regex flag used for selecting the pattern which were of different language character by the help of unicode ex:-`\u0454` after u 0 is mandatory.
 5. `multi-line(m)`=> this m flag used in anchors . If wanted to check the value after ending or starting of every new line then we use this flag. If we only wanted to view the ending and last character then we would't user this flag
 
-# Character set (character class)
+## Character set (character class)
 
 we create a set of character inside square bracket `[]`
 ex:-`[abcd]` => only this set of character is selected not a single character will selected
@@ -41,7 +43,7 @@ ex:-`[abcd]` => only this set of character is selected not a single character wi
 1. `Range`=> with the help of range we can provide a range of character according to the unique code of character. ex:- `[a-zZ-a]`
 2. `Inverter or not` => if caret is written initially then it denoted as a special character or meta character .This special character make the set not means if anything is written in the character class then that will be not selected accept that all set's other character will be selected. ex:- `[^a-z_A-Z]`. If we write the `^`caret symbol after some character then it lose it's special ability ex:- `[hd^3-9]` this now select all the given set present in the set.
 
-# Quantify
+## Quantify
 
 Quantify is used for tell the regex that how many u have to select the character means the quantity
 
@@ -52,7 +54,7 @@ Quantify is used for tell the regex that how many u have to select the character
 5. `{n,}` => add at least n number or more then n number character in pattern.
 6. `{n,m}` => add at lest n number and less then equal to last m numbers in pattern.
 
-# Anchor
+## Anchor
 
 This anchor works when we want to check the word is that word is present in initially or in last of the word or in new line (only works when multi-line flag is on).
 
@@ -68,7 +70,7 @@ example:-
 // not selects mr mohan
 ```
 
-# ShortHand or predefined character (class or sets)
+## ShortHand or predefined character (class or sets)
 
 Short Hand for writing character class
 
@@ -79,7 +81,7 @@ Short Hand for writing character class
 5. `\W` => [^A-Za-z0-9_]
 6. `\S` => [^\n ] would't select space,tab space or new line (line break) other pattern will be selected
 
-# Alternative or (OR operator)
+## Alternative or (OR operator)
 
 This alternative named special character used for spurting the pattern differently if one pattern got correct then other pattern will not works
 `symbol` => `|`
@@ -89,7 +91,7 @@ example
 /hello sir [A-Z][a-zA-Z]{2,}| what happen [A-Z][a-zA-Z]{2,} kumar/g;
 ```
 
-# Groups
+## Groups
 
 A group in regex is a way to bundle multiple pattern pieces together so they can be treated as one unit.
 
@@ -122,7 +124,7 @@ use => `(?:Hello)? [A-Z][a-z]{2,}`
 // 12\01\2034
 ```
 
-# Word Boundary and Non-Word Boundary
+## Word Boundary and Non-Word Boundary
 
 <details>
 <summary>Word Boundary</summary>
@@ -138,7 +140,7 @@ This is denoted with `\B` this works which pattern match with this regex pattern
 
 </details>
 
-# Lookahead && Lookbehind
+## Lookahead && Lookbehind
 
 This lookahead and lookbehind only view the pattern it would not select the matches . It works like a normal pattern but it will never select those pattern.
 
@@ -149,7 +151,7 @@ This lookahead and lookbehind only view the pattern it would not select the matc
   - `Positive`:- check the letter before the matched pattern . Syntax `(?<=)`
   - `Negative`:- this is opposite of `positive lookbehind` . Syntax `(?<!)`
 
-# Replacement or Substitution
+## Replacement or Substitution
 
 We replace the matched string with some specific ways.
 
@@ -159,3 +161,18 @@ We replace the matched string with some specific ways.
 4. `$1`=> this means the n captured match .
 5. `$<name>`=> this means the named captured match .
 6. `$$`=> this means if u want dollar symbol then use this .
+
+## Regex in JS
+
+There is two way to write regex in javascript (js)
+
+1. `Regex literals`=> using `//` delimiters we can create a valid regex. But the delimiters have some patter so that it will form regex other wise it will become comment.
+2. `Regex constructor function`=> using `new Regex()` we can create a valid regex.
+
+## Method and Property of
+
+There is some method and property present in constructor function of regex
+
+1. `test()`=> This method argument as a str and check the string that is it have that pattern written in regex.
+2. `exec()`=> This method help to execute the regex and check the string which was on 1 argument and provide some more property like matched value ,full string, group and many more ... .If the match is not found then return null. if there is global flag then it will check hole string when u call it again and again.
+3. `lastindex`=> This is a property which hold number. It updated when every we using regex pattern with global flag. Whenever we call exec function this used for next starting index where to find the string.
